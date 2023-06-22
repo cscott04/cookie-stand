@@ -21,8 +21,8 @@ const hoursOpen = [
 function City(name, minCust, maxCust, aveCookieSales) {
   this.name = name;
   this.minCust = minCust;
-  this.macCust = maxCust;
-  this.aveCookeSales = aveCookieSales;
+  this.maxCust = maxCust;
+  this.aveCookieSales = aveCookieSales;
 }
 City.prototype.randomNumberOfCustomers = function () {
   return Math.floor(
@@ -31,8 +31,8 @@ City.prototype.randomNumberOfCustomers = function () {
 };
 let main = document.getElementById('cities');
 let table = document.createElement('table');
-mainappendChild(table);
-let seattle = new IDBFactory('Seattle', 23, 65, 6.3);
+main.appendChild(table);
+let seattle = new City('Seattle', 23, 65, 6.3);
 let tokyo = new City('Tokyo', 3, 24, 1.2);
 let dubai = new City('Dubai', 11, 38, 3.7);
 let paris = new City('Paris', 20, 38, 2.3);
@@ -66,11 +66,11 @@ City.prototype.render = function () {
 
   for (let i = 0; i < hoursOpen.length - 2; i++) {
     let hourlySales = Math.floor(
-      this.randomNumberOfCustomers() * this.aveCookiesSales
+      this.randomNumberOfCustomers() * this.aveCookieSales
     );
     citySales.push(hourlySales);
     let td = document.createElement('td');
-    td.innterText = hourlySales;
+    td.innerText = hourlySales;
     cityDataRow.appendChild(td);
     totalSales += hourlySales;
     if (i === 13) {
@@ -100,7 +100,7 @@ function footerFunction() {
     td.innerText = totalOfTotals[i];
     tr.appendChild(td);
   }
-  const sum = totalOftotals.reduce((acc, curr) => {
+  const sum = totalOfTotals.reduce((acc, curr) => {
     return (acc = curr);
   }, 0);
   td = document.createElement('td');
