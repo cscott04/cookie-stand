@@ -39,3 +39,39 @@ nav ul {
   margin-bottom: 1px;
   background-color: #79f4b7;
 }
+td {
+  border: 1px solid black;
+  width: 200px;
+  text-align: center;
+}
+table {
+  border: solid black;
+  border-collapse: collapse;
+  background-image: linear-gradient(#09791c, #00d4ff);
+}
+tbody tr:nth-child(even) {
+  background-color: rgb(132, 122, 224);
+}
+tfoot {
+  background-color: grey;
+}
+#headerContainerSales {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  margin-bottom: 10px;
+  background-color: #79f4b7;
+}
+nav ul {
+  list-style: none;
+  gap: 10px;
+  display: flex;
+  flex-direction: row;
+}
+#headerContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  margin-bottom: 1px;
+  background-color: #79f4b7;
+}
